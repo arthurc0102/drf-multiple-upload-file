@@ -6,6 +6,6 @@ from .serializers import PostSerializers
 
 
 class PostViewSet(ModelViewSet):
-    queryset = Post.objects.all()
+    queryset = Post.objects.prefetch_related('attachments')
     serializer_class = PostSerializers
     permission_classes = (AllowAny,)
