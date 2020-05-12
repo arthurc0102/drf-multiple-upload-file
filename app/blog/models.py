@@ -13,7 +13,7 @@ class Post(models.Model):
 
 class Attachment(models.Model):
     post = models.ForeignKey(Post, models.CASCADE)
-    file = models.FileField()
+    file = models.FileField(upload_to='uploads/%Y-%m-%d-%H-%M-%S/')
 
     def __str__(self):
         return f'{self.post_id}\'s file'
